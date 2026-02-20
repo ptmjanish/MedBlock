@@ -19,8 +19,9 @@ struct StudyScreen: View {
             if let doc = document {
                 ScrollView {
                     ReadingContainer {
-                        ForEach(doc.blocks) { block in
+                        ForEach(Array(doc.blocks.enumerated()), id: \.element.id) { idx, block in
                             BlockRenderer(block: block)
+                                .appearAnimated(index: idx, enabled: true)
                                 .environmentObject(highlightStore)
                                 .transition(.opacity.combined(with: .move(edge: .bottom)))
                         }
