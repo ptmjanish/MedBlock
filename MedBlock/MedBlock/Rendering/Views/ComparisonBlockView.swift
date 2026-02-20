@@ -13,7 +13,6 @@ struct ComparisonBlockView: View {
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
-            // Wide: 2 columns side-by-side (or more)
             HStack(alignment: .top, spacing: 12) {
                 ForEach(block.columns) { col in
                     ComparisonColumnView(column: col)
@@ -21,16 +20,18 @@ struct ComparisonBlockView: View {
                 }
             }
 
-            // Narrow: stacked
             VStack(alignment: .leading, spacing: 12) {
                 ForEach(block.columns) { col in
                     ComparisonColumnView(column: col)
                 }
             }
         }
-        .padding(12)
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: DS.cardRadius)
+                .fill(DS.surface(.card))
+        )
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -38,26 +39,35 @@ private struct ComparisonColumnView: View {
     let column: ComparisonBlock.Column
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(column.title)
-                .font(.headline)
+                .font(.headline.weight(.semibold))
                 .padding(.bottom, 2)
 
             ForEach(column.items) { item in
-                HStack(alignment: .firstTextBaseline) {
+                HStack(alignment: .firstTextBaseline, spacing: 10) {
                     Text(item.label)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                    Spacer(minLength: 12)
+
+                    Spacer(minLength: 8)
+
                     Text(item.value)
-                        .font(.subheadline)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
                         .multilineTextAlignment(.trailing)
                 }
-                Divider().opacity(0.5)
+                .padding(.vertical, 6)
+                .overlay(alignment: .bottom) {
+                    Divider().opacity(0.35)
+                }
+                .accessibilityLabel("\(item.label), \(item.value)")
             }
         }
-        .padding(12)
-        .background(Color.primary.opacity(0.04))
-        .clipShape(RoundedRectangle(cornerRadius: 14))
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: DS.innerRadius)
+                .fill(DS.surface(.raised))
+        )
     }
 }

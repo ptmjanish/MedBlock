@@ -12,26 +12,32 @@ struct MnemonicBlockView: View {
     let block: MnemonicBlock
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(block.title)
-                .font(.headline)
+                .font(.headline.weight(.semibold))
 
             ForEach(block.letters) { l in
-                HStack(alignment: .top, spacing: 10) {
+                HStack(alignment: .top, spacing: 12) {
                     Text(l.letter)
-                        .font(.headline)
-                        .frame(width: 28, height: 28)
-                        .background(Color.accentColor.opacity(0.18))
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .frame(width: 26, height: 26)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(DS.surface(.accentSoft))
+                        )
 
                     Text(l.expansion)
-                        .font(.body)
-                        .lineSpacing(3)
+                        .font(DS.body)
+                        .foregroundStyle(.primary)
+                        .lineSpacing(4)
                 }
             }
         }
-        .padding(12)
-        .background(Color.accentColor.opacity(0.06))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: DS.cardRadius)
+                .fill(DS.surface(.card))
+        )
     }
 }

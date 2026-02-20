@@ -12,22 +12,34 @@ struct CalloutBlockView: View {
     let block: CalloutBlock
 
     var body: some View {
+        let tint = DS.calloutTint(block.style)
+
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: iconName)
                 .font(.title3)
-                .foregroundStyle(iconColor)
+                .foregroundStyle(tint)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(block.title).font(.headline)
-                Text(block.text).font(.body).lineSpacing(3)
+                Text(block.title)
+                    .font(.headline.weight(.semibold))
+                Text(block.text)
+                    .font(DS.body)
+                    .lineSpacing(4)
+                    .foregroundStyle(.primary)
             }
         }
-        .padding(12)
-        .background(bgColor)
-        .clipShape(RoundedRectangle(cornerRadius: 16))
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(borderColor.opacity(0.35), lineWidth: 1)
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: DS.cardRadius)
+                .fill(DS.surface(.card))
+                .overlay(
+                    RoundedRectangle(cornerRadius: DS.cardRadius)
+                        .fill(tint.opacity(0.10))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: DS.cardRadius)
+                        .stroke(tint.opacity(0.25), lineWidth: 1)
+                )
         )
         .accessibilityElement(children: .combine)
     }
@@ -39,22 +51,4 @@ struct CalloutBlockView: View {
         case .info: return "info.circle.fill"
         }
     }
-
-    private var iconColor: Color {
-        switch block.style {
-        case .warning: return .orange
-        case .tip: return .green
-        case .info: return .blue
-        }
-    }
-
-    private var bgColor: Color {
-        switch block.style {
-        case .warning: return Color.orange.opacity(0.12)
-        case .tip: return Color.green.opacity(0.12)
-        case .info: return Color.blue.opacity(0.12)
-        }
-    }
-
-    private var borderColor: Color { iconColor }
 }

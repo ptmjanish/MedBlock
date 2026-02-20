@@ -12,23 +12,27 @@ struct ListBlockView: View {
     let block: ListBlock
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             ForEach(Array(block.items.enumerated()), id: \.offset) { idx, item in
-                HStack(alignment: .top, spacing: 10) {
+                HStack(alignment: .top, spacing: 12) {
                     Text(prefix(for: idx))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.secondary)
-                        .frame(width: 26, alignment: .leading)
+                        .frame(width: 30, alignment: .leading)
 
                     Text(item)
-                        .font(.body)
-                        .lineSpacing(3)
+                        .font(DS.body)
+                        .lineSpacing(4)
+                        .foregroundStyle(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
-        .padding(12)
-        .background(Color.primary.opacity(0.04))
-        .clipShape(RoundedRectangle(cornerRadius: 16))
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: DS.cardRadius)
+                .fill(DS.surface(.card))
+        )
     }
 
     private func prefix(for idx: Int) -> String {

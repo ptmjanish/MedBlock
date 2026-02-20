@@ -18,21 +18,32 @@ struct StudyScreen: View {
         Group {
             if let doc = document {
                 ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 16) {
+                    ReadingContainer {
                         ForEach(doc.blocks) { block in
                             BlockRenderer(block: block)
                                 .environmentObject(highlightStore)
                                 .transition(.opacity.combined(with: .move(edge: .bottom)))
                         }
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 18)
                 }
-                .navigationTitle(doc.title)
+//                .navigationTitle(doc.title)
+                .modifier(AdaptiveNavTitleStyle())
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text(doc.title)
+                            .font(.headline.weight(.semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                    }
+                }
+                .background(DS.surface(.base))
                 .animation(.easeInOut(duration: 0.25), value: doc.blocks.count)
+
             } else if let err = errorText {
-                ContentUnavailableView("Failed to load", systemImage: "exclamationmark.triangle", description: Text(err))
+                ContentUnavailableView("Failed to load",
+                                       systemImage: "exclamationmark.triangle",
+                                       description: Text(err))
             } else {
                 ProgressView("Loading…")
                     .task { load() }
@@ -41,10 +52,18 @@ struct StudyScreen: View {
     }
 
     private func load() {
-        do {
-            document = try JSONLoader.loadBundledDocument(named: "StudyContent")
-        } catch {
-            errorText = error.localizedDescription
-        }
+        do { document = try JSONLoader.loadBundledDocument(named: "StudyContent") }
+        catch { errorText = error.localizedDescription }
+    }
+}
+
+
+
+struct AdaptiveNavTitleStyle: ViewModifier {
+    @Environment(\.horizontalSizeClass) private var hSize
+
+    func body(content: Content) -> some View {
+        content
+            .navigationBarTitleDisplayMode(hSize == .regular ? .large : .inline)
     }
 }
