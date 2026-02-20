@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MnemonicBlockView: View {
     let block: MnemonicBlock
+    @Environment(\.sizeCategory) private var sizeCategory
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -36,7 +37,7 @@ struct MnemonicBlockView: View {
         }
         .padding(14)
         .background(
-            RoundedRectangle(cornerRadius: DS.cardRadius)
+            RoundedRectangle(cornerRadius: DS.cardRadius(sizeCategory))
                 .fill(DS.surface(.card))
         )
     }

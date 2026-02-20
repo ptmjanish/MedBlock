@@ -14,7 +14,7 @@ struct HeadingBlockView: View {
 
     var body: some View {
         Text(block.text)
-            .font(fontFor(level: block.level))
+            .font(DS.headingFont(level: block.level, isCompact: hSize == .compact))
             .foregroundStyle(.primary)
             .padding(.top, block.level == 1 ? 10 : 6)
             .padding(.bottom, block.level == 1 ? 4 : 0)

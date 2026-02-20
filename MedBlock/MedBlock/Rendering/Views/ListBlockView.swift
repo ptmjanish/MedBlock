@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListBlockView: View {
     let block: ListBlock
+    @Environment(\.sizeCategory) private var sizeCategory
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -35,7 +36,7 @@ struct ListBlockView: View {
         }
         .padding(14)
         .background(
-            RoundedRectangle(cornerRadius: DS.cardRadius)
+            RoundedRectangle(cornerRadius: DS.cardRadius(sizeCategory))
                 .fill(DS.surface(.card))
         )
     }

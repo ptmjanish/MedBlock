@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ComparisonBlockView: View {
     let block: ComparisonBlock
+    @Environment(\.sizeCategory) private var sizeCategory
 
     var body: some View {
         ViewThatFits(in: .horizontal) {
@@ -28,7 +29,7 @@ struct ComparisonBlockView: View {
         }
         .padding(14)
         .background(
-            RoundedRectangle(cornerRadius: DS.cardRadius)
+            RoundedRectangle(cornerRadius: DS.cardRadius(sizeCategory))
                 .fill(DS.surface(.card))
         )
         .accessibilityElement(children: .contain)
@@ -37,6 +38,7 @@ struct ComparisonBlockView: View {
 
 private struct ComparisonColumnView: View {
     let column: ComparisonBlock.Column
+    @Environment(\.sizeCategory) private var sizeCategory
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -66,7 +68,7 @@ private struct ComparisonColumnView: View {
         }
         .padding(14)
         .background(
-            RoundedRectangle(cornerRadius: DS.innerRadius)
+            RoundedRectangle(cornerRadius: DS.innerRadius(sizeCategory))
                 .fill(DS.surface(.raised))
         )
     }
