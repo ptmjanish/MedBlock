@@ -1,0 +1,153 @@
+{
+  "title": "Pemphigus vs Bullous Pemphigoid",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Blistering Skin Diseases"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "text": "Two major autoimmune blistering conditions with ",
+          "bold": false
+        },
+        {
+          "text": "distinct pathophysiology",
+          "bold": true
+        },
+        {
+          "text": " that are frequently tested in medical examinations.",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "columns": [
+        {
+          "title": "Pemphigus Vulgaris",
+          "items": [
+            {
+              "label": "Layer",
+              "value": "Intraepidermal"
+            },
+            {
+              "label": "Antibody",
+              "value": "Anti-desmoglein 3"
+            },
+            {
+              "label": "Sign",
+              "value": "Nikolsky (+)"
+            },
+            {
+              "label": "Blister",
+              "value": "Flaccid"
+            },
+            {
+              "label": "Age Group",
+              "value": "Middle-aged"
+            }
+          ]
+        },
+        {
+          "title": "Bullous Pemphigoid",
+          "items": [
+            {
+              "label": "Layer",
+              "value": "Subepidermal"
+            },
+            {
+              "label": "Antibody",
+              "value": "Anti-BP180 / BP230"
+            },
+            {
+              "label": "Sign",
+              "value": "Nikolsky (-)"
+            },
+            {
+              "label": "Blister",
+              "value": "Tense"
+            },
+            {
+              "label": "Age Group",
+              "value": "Elderly"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "mnemonic",
+      "title": "Remember BLISTERS",
+      "letters": [
+        {
+          "letter": "B",
+          "expansion": "Bullae — fluid-filled lesions"
+        },
+        {
+          "letter": "L",
+          "expansion": "Layer — subepidermal vs intraepidermal"
+        },
+        {
+          "letter": "I",
+          "expansion": "Immunofluorescence pattern"
+        },
+        {
+          "letter": "S",
+          "expansion": "Sign — Nikolsky"
+        },
+        {
+          "letter": "T",
+          "expansion": "Target antigen differs"
+        },
+        {
+          "letter": "E",
+          "expansion": "Elderly (BP) vs Middle-aged (PV)"
+        },
+        {
+          "letter": "R",
+          "expansion": "Roof intact (BP) vs flaccid (PV)"
+        },
+        {
+          "letter": "S",
+          "expansion": "Steroids as first-line treatment"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "style": "warning",
+      "title": "High Yield",
+      "text": "Pemphigus = flaccid blisters, Nikolsky (+). Pemphigoid = tense blisters, Nikolsky (-)."
+    },
+    {
+      "type": "callout",
+      "style": "tip",
+      "title": "Memory Aid",
+      "text": "PemphiGUS — Grave, the blisters are so fragile the roof caves in (flaccid). PemphiGOID — GOod roof, tense and intact."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "First-line treatment: Systemic corticosteroids",
+        "Steroid-sparing agents: Azathioprine, Mycophenolate",
+        "Rituximab for refractory cases",
+        "Wound care and infection prevention"
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Obtain skin biopsy for histology",
+        "Perform direct immunofluorescence",
+        "Check serum antibody titers",
+        "Initiate corticosteroid therapy",
+        "Taper based on clinical response"
+      ]
+    }
+  ]
+}

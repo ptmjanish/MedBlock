@@ -11,7 +11,9 @@ import SwiftUI
 struct MedBlockApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                StudyScreen()
+            }
         }
     }
 }
