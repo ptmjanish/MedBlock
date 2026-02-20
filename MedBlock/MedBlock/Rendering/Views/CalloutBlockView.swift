@@ -26,7 +26,11 @@ struct CalloutBlockView: View {
                     .font(DS.body)
                     .lineSpacing(4)
                     .foregroundStyle(.primary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(14)
         .background(
