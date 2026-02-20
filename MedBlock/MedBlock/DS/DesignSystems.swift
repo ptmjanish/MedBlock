@@ -41,10 +41,12 @@ enum DS {
             return Color(.tertiarySystemBackground)
         case .accentSoft:
             return Color.accentColor.opacity(0.10)
+        case .secondary:
+            return Color.secondary
         }
     }
 
-    enum SurfaceLevel { case base, card, raised, accentSoft }
+    enum SurfaceLevel { case base, card, raised, accentSoft, secondary }
 
     // MARK: - Callout styling
     static func calloutTint(_ style: CalloutBlock.Style) -> Color {
