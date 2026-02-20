@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		16EB90A12F48719C00A73288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16C11BF02F4822E200D91006 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16C11BF72F4822E200D91006;
+			remoteInfo = MedBlock;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		16C11BF82F4822E200D91006 /* MedBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16EB909D2F48719C00A73288 /* MedBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedBlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = MedBlock;
 			sourceTree = "<group>";
 		};
+		16EB909E2F48719C00A73288 /* MedBlockTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MedBlockTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		16C11BF52F4822E200D91006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EB909A2F48719C00A73288 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				16C11BFA2F4822E200D91006 /* MedBlock */,
+				16EB909E2F48719C00A73288 /* MedBlockTests */,
 				16C11BF92F4822E200D91006 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				16C11BF82F4822E200D91006 /* MedBlock.app */,
+				16EB909D2F48719C00A73288 /* MedBlockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 16C11BF82F4822E200D91006 /* MedBlock.app */;
 			productType = "com.apple.product-type.application";
 		};
+		16EB909C2F48719C00A73288 /* MedBlockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16EB90A32F48719C00A73288 /* Build configuration list for PBXNativeTarget "MedBlockTests" */;
+			buildPhases = (
+				16EB90992F48719C00A73288 /* Sources */,
+				16EB909A2F48719C00A73288 /* Frameworks */,
+				16EB909B2F48719C00A73288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16EB90A22F48719C00A73288 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				16EB909E2F48719C00A73288 /* MedBlockTests */,
+			);
+			name = MedBlockTests;
+			packageProductDependencies = (
+			);
+			productName = MedBlockTests;
+			productReference = 16EB909D2F48719C00A73288 /* MedBlockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					16C11BF72F4822E200D91006 = {
 						CreatedOnToolsVersion = 26.2;
+					};
+					16EB909C2F48719C00A73288 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 16C11BF72F4822E200D91006;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				16C11BF72F4822E200D91006 /* MedBlock */,
+				16EB909C2F48719C00A73288 /* MedBlockTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		16C11BF62F4822E200D91006 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EB909B2F48719C00A73288 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		16EB90992F48719C00A73288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16EB90A22F48719C00A73288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16C11BF72F4822E200D91006 /* MedBlock */;
+			targetProxy = 16EB90A12F48719C00A73288 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		16C11C012F4822E300D91006 /* Debug */ = {
@@ -312,6 +387,48 @@
 			};
 			name = Release;
 		};
+		16EB90A42F48719C00A73288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL54VFF8M6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptmjanish.MedBlockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedBlock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedBlock";
+			};
+			name = Debug;
+		};
+		16EB90A52F48719C00A73288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DL54VFF8M6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ptmjanish.MedBlockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedBlock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedBlock";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +446,15 @@
 			buildConfigurations = (
 				16C11C042F4822E300D91006 /* Debug */,
 				16C11C052F4822E300D91006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16EB90A32F48719C00A73288 /* Build configuration list for PBXNativeTarget "MedBlockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16EB90A42F48719C00A73288 /* Debug */,
+				16EB90A52F48719C00A73288 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
