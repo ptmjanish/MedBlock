@@ -9,22 +9,9 @@
 import SwiftUI
 
 struct BlockRenderer: View {
-    let block: ContentBlock
+    let block: AnyStudyBlock
 
     var body: some View {
-        switch block {
-        case .heading(let b):
-            HeadingBlockView(block: b)
-        case .paragraph(let b):
-            ParagraphBlockView(blockId: block.id, block: b)
-        case .comparison(let b):
-            ComparisonBlockView(block: b)
-        case .mnemonic(let b):
-            MnemonicBlockView(block: b)
-        case .callout(let b):
-            CalloutBlockView(block: b)
-        case .list(let b):
-            ListBlockView(block: b)
-        }
+        BlockRegistry.shared.render(block: block)
     }
 }

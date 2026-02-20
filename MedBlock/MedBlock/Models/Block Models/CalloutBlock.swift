@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CalloutBlock: Decodable {
+struct CalloutBlock: Decodable, StudyBlockValue {
     enum Style: String, Decodable {
         case warning, tip, info
     }

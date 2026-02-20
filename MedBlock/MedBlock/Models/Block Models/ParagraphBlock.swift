@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct ParagraphBlock: Decodable {
-    struct Span: Decodable {
-        let text: String
-        let bold: Bool
-    }
+struct ParagraphSpan: Decodable, Sendable {
+    let text: String
+    let bold: Bool
+}
 
-    let type: String
-    let content: [Span]
+struct ParagraphBlock: Decodable, StudyBlockValue {
+    let content: [ParagraphSpan]
 }

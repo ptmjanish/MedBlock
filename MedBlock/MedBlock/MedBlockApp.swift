@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct MedBlockApp: App {
+    
+    init() {
+        BlockRegistry.shared.registerDefaults()
+    }
     var body: some Scene {
         WindowGroup {
             NavigationStack {

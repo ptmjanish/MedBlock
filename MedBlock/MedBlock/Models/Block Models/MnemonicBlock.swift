@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MnemonicBlock: Decodable {
+struct MnemonicBlock: Decodable, StudyBlockValue {
     struct Letter: Decodable, Identifiable {
         let letter: String
         let expansion: String

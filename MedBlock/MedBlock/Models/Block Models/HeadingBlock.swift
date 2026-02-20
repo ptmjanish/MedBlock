@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HeadingBlock: Decodable {
+struct HeadingBlock: Decodable, StudyBlockValue {
     let type: String
     let level: Int
     let text: String

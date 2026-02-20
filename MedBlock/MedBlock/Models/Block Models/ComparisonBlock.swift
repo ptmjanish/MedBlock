@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct ComparisonBlock: Decodable {
-    struct Column: Decodable, Identifiable {
-        struct Item: Decodable, Identifiable {
+struct ComparisonBlock: Decodable, StudyBlockValue {
+    struct Column: Decodable, Identifiable, Sendable {
+        struct Item: Decodable, Identifiable, Sendable {
             let label: String
             let value: String
-            var id: String { "\(label):\(value)" }
+            var id: String { "\(label)|\(value)" }
         }
 
         let title: String
@@ -21,6 +21,5 @@ struct ComparisonBlock: Decodable {
         var id: String { title }
     }
 
-    let type: String
     let columns: [Column]
 }

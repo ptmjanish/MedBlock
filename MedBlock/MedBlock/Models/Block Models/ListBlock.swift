@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ListBlock: Decodable {
+struct ListBlock: Decodable, StudyBlockValue {
     let type: String
     let ordered: Bool
     let items: [String]
